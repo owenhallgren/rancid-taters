@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react'
+import movieData from './TestData/movies-mock-data'
+
 
 class App extends Component {
   constructor() {
