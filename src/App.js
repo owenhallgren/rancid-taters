@@ -8,11 +8,13 @@ class App extends Component {
   constructor() {
     super() 
     this.state = {
-      movies: []
+      movies: [],
     }
   }
 
-
+  componentDidMount() {
+    this.setState({ movies: movieData })
+  }
 
 
   render() {
