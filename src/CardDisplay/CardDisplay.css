@@ -3,4 +3,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5vw;
     row-gap: 1vh;
+    background-color: grey;
+    padding: 2%;
 }

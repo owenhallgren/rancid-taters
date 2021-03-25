@@ -4,7 +4,7 @@ import { Component } from 'react'
 import movieData from './TestData/movies-mock-data'
 import Card from './Card/Card'
 import CardDisplay from './CardDisplay/CardDisplay'
-
+import Header from './Header/Header'
 
 class App extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1>Rotten Taters</h1>
+        <Header/>
         <CardDisplay movies={this.state.movies}/>
       </>
     )
