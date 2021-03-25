@@ -1,9 +1,10 @@
 import { findAllByTitle } from "@testing-library/react"
+import './CardDisplay.css'
 import Card from '../Card/Card'
 
 const CardDisplay = ( { movies } ) => {
   return (
-    <>
+    <div className='card-display'>
       {movies.movies && movies.movies.map(movie => {
         return (
           <Card
@@ -14,7 +15,7 @@ const CardDisplay = ( { movies } ) => {
           />
         )
       })}
-    </>
+    </div>
   )
 }
 
