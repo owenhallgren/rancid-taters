@@ -5,7 +5,9 @@ const Card = ({ title, posterPath, averageRating, releaseDate, id }) => {
   const roundedRating = Math.round(averageRating * 10)/10
 
   const getMovieDetails = (movieID) => {
-    console.log(movieID)
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
+    .then(res => res.json())
+    .then(data => console.log(data))
   }
 
 return (
