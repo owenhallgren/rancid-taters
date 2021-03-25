@@ -12,6 +12,7 @@ const CardDisplay = ( { movies } ) => {
             posterPath={movie.poster_path}
             averageRating={movie.average_rating}
             releaseDate={movie.release_date}
+            id={movie.id}
           />
         )
       })}
