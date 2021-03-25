@@ -32,9 +32,23 @@ class App extends Component {
         <Header/>
        
        
-        {!this.state.currentMovie.length && <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}
+        {!this.state.currentMovie.length && <CardDisplay 
+        movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}
 
-        {this.state.currentMovie && <MovieDetails movie={this.state.currentMovie[0]}/>}
+        {this.state.currentMovie.length && 
+        <MovieDetails
+          title={this.state.currentMovie[0].movie.title}
+          posterPath={this.state.currentMovie[0].movie.poster_path}
+          backDropPath={this.state.currentMovie[0].movie.backdrop_path}
+          releaseDate={this.state.currentMovie[0].movie.release_date}
+          overview={this.state.currentMovie[0].movie.overview}
+          averageRating={this.state.currentMovie[0].movie.average_rating}
+          genres={this.state.currentMovie[0].movie.genres}
+          budget={this.state.currentMovie[0].movie.budget}
+          revenue={this.state.currentMovie[0].movie.revenue}
+          runtime={this.state.currentMovie[0].movie.runtime}
+          tagline={this.state.currentMovie[0].movie.tagline}
+        />}
       </>
     )
   }

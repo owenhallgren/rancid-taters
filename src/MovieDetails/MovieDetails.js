@@ -1,8 +1,8 @@
 import './MovieDetails.css'
 
-const MovieDetails = () => {
+const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline}) => {
   return(
-    <h2>Hi</h2>
+    <h2>{title}</h2>
   )
 }  
 
