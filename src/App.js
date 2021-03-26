@@ -17,7 +17,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ movies: movieData })
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then(res => res.json())
+    .then(data => this.setState({movies: data.movies}))
   }
 
   getMovieDetails = (movieID) => {
@@ -30,9 +32,9 @@ class App extends Component {
     return (
       <>
         <Header/>
-       
-       
-        {!this.state.currentMovie.length && <CardDisplay 
+       {console.log(this.state.movies)}
+
+        {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
         movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}
 
         {this.state.currentMovie.length && 

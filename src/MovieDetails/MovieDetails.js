@@ -5,7 +5,6 @@ const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, a
     <div className='movie-details'>
       <img src={backDropPath} className='back-drop'/>
       <section>
-        
         <div>
           <img src={posterPath}/>
           <p>{averageRating} 🥔</p>
