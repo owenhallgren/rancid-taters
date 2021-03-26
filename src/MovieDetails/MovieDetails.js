@@ -16,7 +16,7 @@ const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, a
           <p>{runtime} minutes</p>
           <p>{releaseDate}</p>
         </div>
-        <p>{overview}</p>
+        <p className='overview'>{overview}</p>
       </section>
     </div>
   )

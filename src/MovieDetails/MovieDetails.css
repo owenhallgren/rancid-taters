@@ -16,4 +16,9 @@
 }
 section {
   display: flex;
+  justify-content: space-around;
+}
+
+.overview {
+  width: 40vw
 }
