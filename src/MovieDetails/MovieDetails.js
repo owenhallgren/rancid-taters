@@ -2,7 +2,23 @@ import './MovieDetails.css'
 
 const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline}) => {
   return(
-    <h2>{title}</h2>
+    <div className='movie-details'>
+      <img src={backDropPath} className='back-drop'/>
+      <section>
+        
+        <div>
+          <img src={posterPath}/>
+          <p>{averageRating} 🥔</p>
+        </div>
+        <div>
+          <h2>{title}</h2>
+          <div className='genreDisplay'>{genres.map(genre => <p className='genre'>{genre} </p>)}</div>
+          <p>{runtime} minutes</p>
+          <p>{releaseDate}</p>
+        </div>
+        <p>{overview}</p>
+      </section>
+    </div>
   )
 }  
 
