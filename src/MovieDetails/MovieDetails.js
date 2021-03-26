@@ -3,6 +3,7 @@ import './MovieDetails.css'
 const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline}) => {
   return(
     <div className='movie-details'>
+    <button className='go-back-button'>Go Back</button>
       <img src={backDropPath} className='back-drop'/>
       <section>
         <div>
