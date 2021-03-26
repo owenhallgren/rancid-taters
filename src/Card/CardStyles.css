@@ -9,6 +9,10 @@
     color: #da493c;
 }
 
+.movie-card:hover {
+    color: white;
+}
+
 img {
     width: 200px;
 }
