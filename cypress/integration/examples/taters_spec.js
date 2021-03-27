@@ -1,9 +1,3 @@
-// describe('Feedback Loop', () => {
-//   it('Should confirm that true is equal to true', () => {
-//     expect(true).to.equal(true)
-//   });
-// });
-
 describe('home page', () => {
   it('Should it should have a header', () => {
     cy.visit('http://localhost:3000')
