@@ -6,6 +6,11 @@ import Card from './Card/Card'
 import CardDisplay from './CardDisplay/CardDisplay'
 import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
+// const checkForError = response => {
+//   if (!response.ok) {
+//     console.log('fail')
+//   } 
+// }
 
 class App extends Component {
   constructor() {
@@ -17,22 +22,43 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({ movies: movieData })
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+    .then((res) => {
+      if(!res.ok) {
+        throw Error('Can not find movies on our end! Refresh and try again.')
+      }
+     return res.json() 
+    })
+    .then(data => this.setState({movies: data.movies}))
+
+    // .then(checkForError)
   }
 
   getMovieDetails = (movieID) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
-    .then(res => res.json())
+    .then((res) => {
+      if(!res.ok) {
+        throw Error('Can not find that movie on our end! Refresh and try again.')
+      }
+      return res.json()
+    })
     .then(data => this.setState({currentMovie: [data]}))
+    // .then(checkForError)
   }
+
+  goBackToHome = () => {
+    this.setState({currentMovie: []})
+  }
+
+  
 
   render() {
     return (
       <>
         <Header/>
-       
-       
-        {!this.state.currentMovie.length && <CardDisplay 
+       {console.log(this.state.movies)}
+
+        {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
         movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}
 
         {this.state.currentMovie.length && 
@@ -48,6 +74,7 @@ class App extends Component {
           revenue={this.state.currentMovie[0].movie.revenue}
           runtime={this.state.currentMovie[0].movie.runtime}
           tagline={this.state.currentMovie[0].movie.tagline}
+          goBackToHome={this.goBackToHome}
         />}
       </>
     )

@@ -9,7 +9,7 @@ return (
     <div className='movie-card' onClick={() => getMovieDetails(id)}>
       <h3>{title}</h3>
       <img src={posterPath}/>
-      <p>Average Rating: {roundedRating} 🥔</p>
+      <p>Average Rating: {roundedRating} 🥔 's</p>
       <p>Release Date: {releaseDate}</p>
     </div>
 )
