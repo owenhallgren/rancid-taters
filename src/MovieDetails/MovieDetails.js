@@ -1,14 +1,15 @@
 import './MovieDetails.css'
 
 const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline, goBackToHome}) => {
+  const roundedRating = Math.round(averageRating * 10)/10
   return(
     <div className='movie-details'>
     <button className='go-back-button' onClick={() => goBackToHome()}>Go Back</button>
       <img src={backDropPath} className='back-drop'/>
       <section className='details-section'>
         <div>
-          <img src={posterPath}/>
-          <p>{averageRating} 🥔 's</p>
+          <img src={posterPath} className='poster'/>
+          <p>{roundedRating} 🥔 's</p>
         </div>
         <div className='details-section'>
           <h2>{title}</h2>
@@ -16,7 +17,7 @@ const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, a
           <p>{runtime} minutes</p>
           <p>{releaseDate}</p>
         </div>
-        <p className='overview details-section'>{overview}</p>
+        <p className='overview'>{overview}</p>
       </section>
     </div>
   )
