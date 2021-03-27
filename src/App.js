@@ -6,6 +6,11 @@ import Card from './Card/Card'
 import CardDisplay from './CardDisplay/CardDisplay'
 import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
+// const checkForError = response => {
+//   if (!response.ok) {
+//     console.log('fail')
+//   } 
+// }
 
 class App extends Component {
   constructor() {
@@ -20,13 +25,17 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
     .then(res => res.json())
     .then(data => this.setState({movies: data.movies}))
+    // .then(checkForError)
   }
 
   getMovieDetails = (movieID) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
     .then(res => res.json())
     .then(data => this.setState({currentMovie: [data]}))
+    // .then(checkForError)
   }
+
+  
 
   render() {
     return (
