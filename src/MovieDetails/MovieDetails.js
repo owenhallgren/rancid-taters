@@ -1,9 +1,9 @@
 import './MovieDetails.css'
 
-const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline}) => {
+const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline, goBackToHome}) => {
   return(
     <div className='movie-details'>
-    <button className='go-back-button'>Go Back</button>
+    <button className='go-back-button' onClick={() => goBackToHome()}>Go Back</button>
       <img src={backDropPath} className='back-drop'/>
       <section className='details-section'>
         <div>

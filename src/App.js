@@ -35,6 +35,10 @@ class App extends Component {
     // .then(checkForError)
   }
 
+  goBackToHome = () => {
+    this.setState({currentMovie: []})
+  }
+
   
 
   render() {
@@ -59,6 +63,7 @@ class App extends Component {
           revenue={this.state.currentMovie[0].movie.revenue}
           runtime={this.state.currentMovie[0].movie.runtime}
           tagline={this.state.currentMovie[0].movie.tagline}
+          goBackToHome={this.goBackToHome}
         />}
       </>
     )
