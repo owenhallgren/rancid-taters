@@ -1,6 +1,6 @@
 .movie-details {
   height: 100vh;
-  width: 100vw
+  width: 100vw;
 }
 
 .back-drop {
@@ -21,6 +21,11 @@ section {
 
 .overview {
   width: 40vw
+}
+
+.details-section {
+  color: red;
+  background-color: grey;
 }
 
   .go-back-button {
