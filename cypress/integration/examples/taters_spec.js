@@ -32,6 +32,14 @@ describe('home page', () => {
     .get('p').contains('2020-09-29')
     .get('.overview').contains('A professional thief with $40 million in debt and his family\'s life on the line must commit one final heist - rob a futuristic airborne casino filled with the world\'s most dangerous criminals.')
   })
+
+  it('should go back to home page on back button click', () => {
+    cy.visit('http://localhost:3000')
+    .get('.movie-card').first().click()
+    .get('.go-back-button').click()
+    .get('.movie-card').first()
+    .get('h3').contains('Money Plane')
+  })
 })
 
 
