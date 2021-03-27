@@ -23,14 +23,25 @@ class App extends Component {
 
   componentDidMount() {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-    .then(res => res.json())
+    .then((res) => {
+      if(!res.ok) {
+        throw Error('Can not find movies on our end! Refresh and try again.')
+      }
+     return res.json() 
+    })
     .then(data => this.setState({movies: data.movies}))
+
     // .then(checkForError)
   }
 
   getMovieDetails = (movieID) => {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
-    .then(res => res.json())
+    .then((res) => {
+      if(!res.ok) {
+        throw Error('Can not find that movie on our end! Refresh and try again.')
+      }
+      return res.json()
+    })
     .then(data => this.setState({currentMovie: [data]}))
     // .then(checkForError)
   }
