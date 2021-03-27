@@ -8,7 +8,7 @@ const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, a
       <section className='details-section'>
         <div>
           <img src={posterPath}/>
-          <p>{averageRating} 🥔</p>
+          <p>{averageRating} 🥔 's</p>
         </div>
         <div className='details-section'>
           <h2>{title}</h2>
