@@ -38,7 +38,7 @@ class MovieDetails extends Component {
           <section className='details-section'>
             <div>
               <img src={currentMovie[0].movie.poster_path} className='poster'/>
-              <p>{currentMovie[0].movie.average_rating} 🥔 's</p>
+              <p>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
             </div>
             <div className='details-section'>
               <h2>{currentMovie[0].movie.title}</h2>
