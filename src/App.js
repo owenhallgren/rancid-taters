@@ -30,16 +30,8 @@ class App extends Component {
      return res.json() 
     })
     .then(data => this.setState({movies: data.movies}))
-
-    // .then(checkForError)
   }
 
-
-  goBackToHome = () => {
-    this.setState({currentMovie: []})
-  }
-
-  
 
   render() {
     return (

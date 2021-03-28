@@ -1,6 +1,7 @@
 import './MovieDetails.css'
 import { Component } from 'react'
 import { render } from '@testing-library/react'
+import { Link } from 'react-router-dom'
 
 class MovieDetails extends Component {
   constructor() {
@@ -33,7 +34,9 @@ class MovieDetails extends Component {
       {
         currentMovie.length && 
       <div className='movie-details'>
-        <button className='go-back-button' onClick={() => this.props.goBackToHome()}>Go Back</button>
+        <Link to='/'>
+          <button className='go-back-button'>Go Back</button>
+        </Link>
           <img src={currentMovie[0].movie.backdrop_path} className='back-drop'/>
           <section className='details-section'>
             <div>
