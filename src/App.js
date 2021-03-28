@@ -6,11 +6,6 @@ import Card from './Card/Card'
 import CardDisplay from './CardDisplay/CardDisplay'
 import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
-// const checkForError = response => {
-//   if (!response.ok) {
-//     console.log('fail')
-//   } 
-// }
 
 class App extends Component {
   constructor() {
@@ -56,7 +51,6 @@ class App extends Component {
     return (
       <>
         <Header/>
-       {console.log(this.state.movies)}
 
         {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
         movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}

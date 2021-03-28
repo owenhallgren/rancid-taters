@@ -3,7 +3,6 @@ import './CardDisplay.css'
 import Card from '../Card/Card'
 
 const CardDisplay = ( { movies, getMovieDetails } ) => {
-  console.log(movies)
   const moviesToDisplay =  movies.map(movie => {
           return (
             <Card
