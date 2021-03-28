@@ -34,17 +34,6 @@ class App extends Component {
     // .then(checkForError)
   }
 
-  getMovieDetails = (movieID) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
-    .then((res) => {
-      if(!res.ok) {
-        throw Error('Can not find that movie on our end! Refresh and try again.')
-      }
-      return res.json()
-    })
-    .then(data => this.setState({currentMovie: [data]}))
-    // .then(checkForError)
-  }
 
   goBackToHome = () => {
     this.setState({currentMovie: []})
@@ -57,14 +46,23 @@ class App extends Component {
       <>
         <Header/>
 
-        <Route path='/'>
+        {/* <Route path='/'>
           <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
-        </Route>
+        </Route> */}
+        <Route exact path='/' render={() => 
+        <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+        }/>
 
         {/* {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
         movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>} */}
 
-        {this.state.currentMovie.length && 
+        <Route path='/movie/:id' render={({match}) => 
+        <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
+        }/>
+
+        
+
+        {/* {this.state.currentMovie.length && 
         <MovieDetails
           title={this.state.currentMovie[0].movie.title}
           posterPath={this.state.currentMovie[0].movie.poster_path}
@@ -78,7 +76,7 @@ class App extends Component {
           runtime={this.state.currentMovie[0].movie.runtime}
           tagline={this.state.currentMovie[0].movie.tagline}
           goBackToHome={this.goBackToHome}
-        />}
+        />} */}
       </>
     )
   }

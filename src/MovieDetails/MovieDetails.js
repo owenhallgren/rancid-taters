@@ -1,26 +1,59 @@
 import './MovieDetails.css'
+import { Component } from 'react'
+import { render } from '@testing-library/react'
 
-const MovieDetails = ({ title, posterPath, backDropPath,releaseDate, overview, averageRating, genres, budget, revenue, runtime, tagline, goBackToHome}) => {
-  const roundedRating = Math.round(averageRating * 10)/10
-  return(
-    <div className='movie-details'>
-    <button className='go-back-button' onClick={() => goBackToHome()}>Go Back</button>
-      <img src={backDropPath} className='back-drop'/>
-      <section className='details-section'>
-        <div>
-          <img src={posterPath} className='poster'/>
-          <p>{roundedRating} 🥔 's</p>
+class MovieDetails extends Component {
+  constructor() {
+    super()
+    this.state = {
+      currentMovie: []
+    }
+  }
+
+  componentDidMount() {
+    this.getMovieDetails(this.props.id)
+  }
+  
+  getMovieDetails = (movieId) => {
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
+    .then((res) => {
+      if(!res.ok) {
+        throw Error('Can not find that movie on our end! Refresh and try again.')
+      }
+      return res.json()
+    })
+    .then(data => this.setState({currentMovie: [data]}))
+  }
+  
+  render() {
+    console.log(this.state)
+    const { currentMovie } = this.state
+    return(
+      <>
+      {
+        currentMovie.length && 
+      <div className='movie-details'>
+        <button className='go-back-button' onClick={() => this.props.goBackToHome()}>Go Back</button>
+          <img src={currentMovie[0].movie.backdrop_path} className='back-drop'/>
+          <section className='details-section'>
+            <div>
+              <img src={currentMovie[0].movie.poster_path} className='poster'/>
+              <p>{currentMovie[0].movie.average_rating} 🥔 's</p>
+            </div>
+            <div className='details-section'>
+              <h2>{currentMovie[0].movie.title}</h2>
+              <div className='genreDisplay'>{currentMovie[0].movie.genres.map(genre => <p className='genre'>{genre} </p>)}</div>
+              <p>{currentMovie[0].movie.runtime} minutes</p>
+              <p>{currentMovie[0].movie.release_date}</p>
+            </div>
+            <p className='overview'>{currentMovie[0].movie.overview}</p>
+          </section>
         </div>
-        <div className='details-section'>
-          <h2>{title}</h2>
-          <div className='genreDisplay'>{genres.map(genre => <p className='genre'>{genre} </p>)}</div>
-          <p>{runtime} minutes</p>
-          <p>{releaseDate}</p>
-        </div>
-        <p className='overview'>{overview}</p>
-      </section>
-    </div>
-  )
+        }
+        </>
+      )
+  }
+  
 }  
 
 export default MovieDetails
