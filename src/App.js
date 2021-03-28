@@ -6,6 +6,11 @@ import Card from './Card/Card'
 import CardDisplay from './CardDisplay/CardDisplay'
 import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
+import {
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -52,8 +57,12 @@ class App extends Component {
       <>
         <Header/>
 
-        {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
-        movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}
+        <Route path='/'>
+          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+        </Route>
+
+        {/* {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
+        movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>} */}
 
         {this.state.currentMovie.length && 
         <MovieDetails
