@@ -4,7 +4,7 @@
 }
 
 .back-drop {
-  height: 60vh;
+  /* height: 60vh; */
   width: 100vw
 }
 .genreDisplay {
@@ -24,13 +24,17 @@ section {
 }
 
 .details-section {
-  color: red;
+  color: #da493c;
   background-color: grey;
+  position: fixed; 
+  bottom:0;
+  width: 100%;
+  /* margin-bottom: 0; */
 }
 
   .go-back-button {
      position:absolute; left:0; top:0;
-     margin-top: 5%;
+     margin-top: 10vh;
      margin-left: 2%;
      width: 120px;
      height: 60px;
@@ -38,6 +42,7 @@ section {
      border-radius: 3px;
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    background-color: #da493c;
   }
 
   .go-back-button:hover {
