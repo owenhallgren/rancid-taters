@@ -6,3 +6,9 @@
     background-color: grey;
     padding: 2%;
 }
+@media screen and (max-width: 750px) {
+  .card-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
