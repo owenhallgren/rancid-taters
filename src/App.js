@@ -6,11 +6,11 @@ import Card from './Card/Card'
 import CardDisplay from './CardDisplay/CardDisplay'
 import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
-// const checkForError = response => {
-//   if (!response.ok) {
-//     console.log('fail')
-//   } 
-// }
+import {
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 class App extends Component {
   constructor() {
@@ -30,38 +30,31 @@ class App extends Component {
      return res.json() 
     })
     .then(data => this.setState({movies: data.movies}))
-
-    // .then(checkForError)
   }
 
-  getMovieDetails = (movieID) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieID}`)
-    .then((res) => {
-      if(!res.ok) {
-        throw Error('Can not find that movie on our end! Refresh and try again.')
-      }
-      return res.json()
-    })
-    .then(data => this.setState({currentMovie: [data]}))
-    // .then(checkForError)
-  }
-
-  goBackToHome = () => {
-    this.setState({currentMovie: []})
-  }
-
-  
 
   render() {
     return (
       <>
         <Header/>
-       {console.log(this.state.movies)}
 
-        {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
-        movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>}
+        {/* <Route path='/'>
+          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+        </Route> */}
+        <Route exact path='/' render={() => 
+        <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+        }/>
 
-        {this.state.currentMovie.length && 
+        {/* {this.state.movies.length > 0 && !this.state.currentMovie.length && <CardDisplay 
+        movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>} */}
+
+        <Route path='/movie/:id' render={({match}) => 
+        <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
+        }/>
+
+        
+
+        {/* {this.state.currentMovie.length && 
         <MovieDetails
           title={this.state.currentMovie[0].movie.title}
           posterPath={this.state.currentMovie[0].movie.poster_path}
@@ -75,7 +68,7 @@ class App extends Component {
           runtime={this.state.currentMovie[0].movie.runtime}
           tagline={this.state.currentMovie[0].movie.tagline}
           goBackToHome={this.goBackToHome}
-        />}
+        />} */}
       </>
     )
   }
