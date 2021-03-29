@@ -20,7 +20,7 @@ section {
 }
 
 .overview {
-  width: 40vw
+  width: 15vw;
 }
 
 .details-section {
@@ -28,7 +28,11 @@ section {
   background-color: grey;
   position: fixed; 
   bottom:0;
+  padding-top: 1vh;
   width: 100%;
+
+  /* display: flex; */
+  /* flex-direction: column; */
   /* margin-bottom: 0; */
 }
 
@@ -47,4 +51,8 @@ section {
 
   .go-back-button:hover {
     box-shadow: 0 0 40px 40px #e74c3c inset;
+  }
+
+  .poster {
+
   }

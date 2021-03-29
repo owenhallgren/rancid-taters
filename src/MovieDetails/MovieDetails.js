@@ -43,7 +43,7 @@ class MovieDetails extends Component {
               <img src={currentMovie[0].movie.poster_path} className='poster'/>
               <p>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
             </div>
-            <div className='details-section'>
+            <div className='info-section'>
               <h2>{currentMovie[0].movie.title}</h2>
               <div className='genreDisplay'>{currentMovie[0].movie.genres.map(genre => <p className='genre'>{genre} </p>)}</div>
               <p>{currentMovie[0].movie.runtime} minutes</p>
