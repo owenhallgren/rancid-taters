@@ -26,8 +26,7 @@ class MovieDetails extends Component {
       return (
         <>
           <div className="trailer">
-            <h3 className="trailer-label">Trailer</h3>
-            <ReactPlayer url={`https://www.${foundTrailer.site.toLowerCase()}.com/watch?v=${foundTrailer.key}`} />
+            <ReactPlayer controls={true} width='360px' height='185px' url={`https://www.${foundTrailer.site.toLowerCase()}.com/watch?v=${foundTrailer.key}`} />
           </div>
         </>
       )
@@ -35,17 +34,6 @@ class MovieDetails extends Component {
       return null
     }
   }
-  
-  // getMovieDetails = (movieId) => {
-  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
-  //   .then((res) => {
-  //     if(!res.ok) {
-  //       throw Error('Can not find that movie on our end! Refresh and try again.')
-  //     }
-  //     return res.json()
-  //   })
-  //   .then(data => this.setState({currentMovie: [data]}))
-  // }
   
   render() {
     console.log(this.state)
