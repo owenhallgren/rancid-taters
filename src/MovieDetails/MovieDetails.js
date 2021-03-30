@@ -2,18 +2,38 @@ import './MovieDetails.css'
 import { Component } from 'react'
 import { render } from '@testing-library/react'
 import { Link } from 'react-router-dom'
-import { getMovieDetails } from '../apiCalls'
+import { getMovieDetails, getTrailer } from '../apiCalls'
+import ReactPlayer from 'react-player/youtube'
 
 class MovieDetails extends Component {
   constructor() {
     super()
     this.state = {
-      currentMovie: []
+      currentMovie: [],
+      trailer: []
     }
   }
 
   componentDidMount() {
     getMovieDetails(this.props.id).then(data => this.setState({currentMovie: [data]}))
+    getTrailer(this.props.id).then(data => this.setState({trailer: [data]}))
+  }
+
+  getVideo = () => {
+    console.log(this.state.trailer[0].videos)
+    const foundTrailer = this.state.trailer[0].videos.find(v => v.type === "Trailer")
+    if (foundTrailer.site === 'YouTube') {
+      return (
+        <>
+          <div className="trailer">
+            <h3 className="trailer-label">Trailer</h3>
+            <ReactPlayer url={`https://www.${foundTrailer.site.toLowerCase()}.com/watch?v=${foundTrailer.key}`} />
+          </div>
+        </>
+      )
+    } else {
+      return null
+    }
   }
   
   // getMovieDetails = (movieId) => {
@@ -51,7 +71,8 @@ class MovieDetails extends Component {
               <p>{currentMovie[0].movie.release_date}</p>
             </div>
             <p className='overview'>{currentMovie[0].movie.overview}</p>
-          </section>
+            </section>
+            {this.state.trailer.length && this.getVideo()}
         </div>
         }
         </>

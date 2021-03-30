@@ -18,3 +18,13 @@ export const getMovieDetails = (movieId) => {
         return res.json()
         })
   }
+
+  export const getTrailer = (movieId) => {
+    return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}/videos`)
+        .then((res) => {
+        if(!res.ok) {
+            throw Error('Can not find that trailer on our end! Refresh and try again.')
+        }
+        return res.json()
+        })
+  }
