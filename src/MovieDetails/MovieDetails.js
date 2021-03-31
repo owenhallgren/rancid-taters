@@ -20,7 +20,6 @@ class MovieDetails extends Component {
   }
 
   getVideo = () => {
-    console.log(this.state.trailer[0].videos)
     const foundTrailer = this.state.trailer[0].videos.find(v => v.type === "Trailer")
     if (foundTrailer.site === 'YouTube') {
       return (
@@ -36,7 +35,6 @@ class MovieDetails extends Component {
   }
   
   render() {
-    console.log(this.state)
     const { currentMovie } = this.state
     return(
       <>
