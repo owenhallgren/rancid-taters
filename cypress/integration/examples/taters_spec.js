@@ -1,11 +1,21 @@
 describe('home page', () => {
+
+
+  beforeEach(() => {
+    cy
+    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919/videos', {fixture: 'mock-trailer-data.json'})
+    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {fixture: 'mock-details-data.json'})
+    .intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: 'mock-movies-data.json'})
+    .visit('http://localhost:3000')
+  })
+
   it('Should it should have a header', () => {
-    cy.visit('http://localhost:3000')
+    cy
     .get('h1').contains('Rotten Taters 🥔')
   })
 
   it('Should display movies', () => {
-    cy.visit('http://localhost:3000')
+    cy
     .get('.movie-card').first()
     .get('h3').contains('Money Plane')
     .get('img').should('have.attr', 'src').should('include', 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg')
@@ -14,7 +24,7 @@ describe('home page', () => {
   })
 
   it('Should display movie details', () => {
-    cy.visit('http://localhost:3000')
+    cy
     .get('.movie-card').first().click()
     .get('.movie-details')
     .get('.back-drop').should('have.attr', 'src').should('include', 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg')
@@ -28,7 +38,7 @@ describe('home page', () => {
   })
 
   it('should go back to home page on back button click', () => {
-    cy.visit('http://localhost:3000')
+    cy
     .get('.movie-card').first().click()
     .get('.go-back-button').click()
     .get('.movie-card').first()

@@ -16,11 +16,10 @@ class MovieDetails extends Component {
 
   componentDidMount() {
     getMovieDetails(this.props.id).then(data => this.setState({currentMovie: [data]}))
-    getTrailer(this.props.id).then(data => this.setState({trailer: [data]}))
+    // getTrailer(this.props.id).then(data => this.setState({trailer: [data]}))
   }
 
   getVideo = () => {
-    console.log(this.state.trailer[0].videos)
     const foundTrailer = this.state.trailer[0].videos.find(v => v.type === "Trailer")
     if (foundTrailer.site === 'YouTube') {
       return (
@@ -36,7 +35,6 @@ class MovieDetails extends Component {
   }
   
   render() {
-    console.log(this.state)
     const { currentMovie } = this.state
     return(
       <>
@@ -60,7 +58,7 @@ class MovieDetails extends Component {
             </div>
             <p className='overview'>{currentMovie[0].movie.overview}</p>
             </section>
-            {this.state.trailer.length && this.getVideo()}
+            {/* {this.state.trailer.length && this.getVideo()} */}
         </div>
         }
         </>
