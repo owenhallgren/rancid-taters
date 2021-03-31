@@ -7,11 +7,16 @@
     align-items: center;
     background-color: black;
     color: #da493c;
+    transition: transform 1.2s;
+    border: solid 2px #da493c;
+    /* width: 13vw */
 }
+
 
 .movie-card:hover {
     color: white;
     border: 2px solid red;
+    transform: scale(1.1);
 }
 
 img {
