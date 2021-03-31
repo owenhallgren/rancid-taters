@@ -16,7 +16,7 @@ class MovieDetails extends Component {
 
   componentDidMount() {
     getMovieDetails(this.props.id).then(data => this.setState({currentMovie: [data]}))
-    // getTrailer(this.props.id).then(data => this.setState({trailer: [data]}))
+    getTrailer(this.props.id).then(data => this.setState({trailer: [data]}))
   }
 
   getVideo = () => {
@@ -58,7 +58,7 @@ class MovieDetails extends Component {
             </div>
             <p className='overview'>{currentMovie[0].movie.overview}</p>
             </section>
-            {/* {this.state.trailer.length && this.getVideo()} */}
+            {this.state.trailer.length && this.getVideo()}
         </div>
         }
         </>
