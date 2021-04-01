@@ -67,3 +67,9 @@ section {
     /* align-self: center; */
   }
 
+  .trailer-error {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+    color: red;
+  }

@@ -10,13 +10,15 @@ class MovieDetails extends Component {
     super()
     this.state = {
       currentMovie: [],
-      trailer: []
+      trailer: [],
+      error: '',
+      trailerError: ''
     }
   }
 
   componentDidMount() {
-    getMovieDetails(this.props.id).then(data => this.setState({currentMovie: [data]}))
-    getTrailer(this.props.id).then(data => this.setState({trailer: [data]}))
+    getMovieDetails(this.props.id).then(data => this.setState({currentMovie: [data]})).catch(err => this.setState({error:`${err.message}`}))
+    getTrailer(this.props.id).then(data => this.setState({trailer: [data]})).catch(err => this.setState({trailerError:`${err.message}` }))
   }
 
   getVideo = () => {
@@ -24,9 +26,12 @@ class MovieDetails extends Component {
     if (foundTrailer.site === 'YouTube') {
       return (
         <>
-          <div className="trailer">
+        {this.state.trailerError && 
+          <h3 className="trailer-error">{this.state.trailerError}</h3>
+        }
+          {!this.state.trailerError && <div className="trailer">
             <ReactPlayer controls={true} width='360px' height='185px' url={`https://www.${foundTrailer.site.toLowerCase()}.com/watch?v=${foundTrailer.key}`} />
-          </div>
+          </div>}
         </>
       )
     } else {
@@ -38,6 +43,9 @@ class MovieDetails extends Component {
     const { currentMovie } = this.state
     return(
       <>
+      {this.state.error && 
+      <h3>{this.state.error}</h3>
+      }
       {
         currentMovie.length && 
       <div className='movie-details'>

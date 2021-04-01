@@ -19,12 +19,13 @@ class App extends Component {
     super() 
     this.state = {
       movies: [],
-      currentMovie: []
+      currentMovie: [],
+      error: false
     }
   }
 
   componentDidMount() {
-    movieCall().then(data => this.setState({movies: data.movies}))
+    movieCall().then(data => this.setState({movies: data.movies})).catch(err => this.setState({error: true}) )
   }
 
 
@@ -47,23 +48,13 @@ class App extends Component {
         <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
         }/>
 
+        {this.state.error && 
+        <h3>We can't load the movies you're looking for, please refresh and try again!</h3>
+        }
+
         
 
-        {/* {this.state.currentMovie.length && 
-        <MovieDetails
-          title={this.state.currentMovie[0].movie.title}
-          posterPath={this.state.currentMovie[0].movie.poster_path}
-          backDropPath={this.state.currentMovie[0].movie.backdrop_path}
-          releaseDate={this.state.currentMovie[0].movie.release_date}
-          overview={this.state.currentMovie[0].movie.overview}
-          averageRating={this.state.currentMovie[0].movie.average_rating}
-          genres={this.state.currentMovie[0].movie.genres}
-          budget={this.state.currentMovie[0].movie.budget}
-          revenue={this.state.currentMovie[0].movie.revenue}
-          runtime={this.state.currentMovie[0].movie.runtime}
-          tagline={this.state.currentMovie[0].movie.tagline}
-          goBackToHome={this.goBackToHome}
-        />} */}
+        
       </>
     )
   }
