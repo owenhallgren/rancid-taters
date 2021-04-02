@@ -1,7 +1,7 @@
 import { Component } from 'react'
 
 class Form extends Component {
-    constructor() {
+    constructor({ filterMovies }) {
         super() 
         this.state = {
             search: ''
@@ -10,6 +10,7 @@ class Form extends Component {
 
     handleChange = e =>  {
         this.setState({ [e.target.name]: e.target.value })
+        this.props.filterMovies(e.target.value)
     }
 
     render() {

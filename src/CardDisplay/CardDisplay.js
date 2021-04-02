@@ -3,8 +3,9 @@ import './CardDisplay.css'
 import Card from '../Card/Card'
 import Form from '../Form/Form'
 
-const CardDisplay = ( { movies, getMovieDetails } ) => {
-  const moviesToDisplay =  movies.map(movie => {
+const CardDisplay = ( { movies, filterMovies, filteredMovies } ) => {
+  const moviesToMap = filteredMovies.length ? filteredMovies : movies
+  const moviesToDisplay =  moviesToMap.map(movie => {
           return (
             <Card
               title={movie.title}
@@ -12,13 +13,12 @@ const CardDisplay = ( { movies, getMovieDetails } ) => {
               averageRating={movie.average_rating}
               releaseDate={movie.release_date}
               id={movie.id}
-              getMovieDetails={getMovieDetails}
             />
           )
         })
   return (
       <>
-        <Form/>
+        <Form filterMovies={filterMovies}/>
         <div className='card-display'>
         {moviesToDisplay}
       </div>

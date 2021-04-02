@@ -1,7 +1,7 @@
 import './CardStyles.css'
 import { Link } from 'react-router-dom'
 
-const Card = ({ title, posterPath, averageRating, releaseDate, id, getMovieDetails }) => {
+const Card = ({ title, posterPath, averageRating, releaseDate, id }) => {
 
   const roundedRating = Math.round(averageRating * 10)/10
 
