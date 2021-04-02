@@ -21,6 +21,13 @@ section {
 
 .overview {
   width: 25vw;
+  font-size: 1.1em;
+  font-weight: bolder;
+  background-color: rgb(128, 128, 128, 0.7);
+  border-radius: 30px;
+  padding: 2%;
+  /* -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; */
 }
 
 .details-section {
@@ -32,6 +39,7 @@ section {
   width: 60vw;
   display: flex;
   border-top-right-radius: 30px;
+  padding: 3%;
 }
 
   .go-back-button {
@@ -66,4 +74,59 @@ section {
     margin-bottom: 10vw;
     /* align-self: center; */
   }
+.info-section {
+    padding: 2%
+  }
+  @media screen and (max-width: 750px) {
+
+    .movie-details {
+      background-color: rgb(128, 128, 128, 0.0);
+    }
+
+
+    .details-section {
+      width:100%;
+      height: auto;
+      color: black;
+      background-color: rgb(128, 128, 128, 0.8);
+      position: relative; 
+      padding-top: 0vh;
+      width: 100vw;
+      display: flex;
+      /* align-items: center; */
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+      border-top-right-radius: 0px;
+      padding: 0%;
+      
+    }
+    .trailer {
+      position: relative;
+      margin: 4vh 0vw 0vh 0vw; 
+      align-self: center;
+      
+      /* position: absolute; bottom:0; right:0px;  original
+      width: auto; 
+      height: auto;
+      margin-right: 6vw;
+      margin-bottom: 10vw; */
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+    }
+    .overview {
+      width: 100vw;
+      font-size: 1.1em;
+      font-weight: bolder;
+      background-color: rgb(128, 128, 128, 0.0);
+      border-radius: 0px;
+      padding: 4%
+      /* -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: black; */
+    }
+  }
+  
+
 
