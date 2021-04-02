@@ -30,7 +30,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div className='app'>
         <Header/>
 
         {/* <Route path='/'>
@@ -64,7 +64,7 @@ class App extends Component {
           tagline={this.state.currentMovie[0].movie.tagline}
           goBackToHome={this.goBackToHome}
         />} */}
-      </>
+      </div>
     )
   }
 }

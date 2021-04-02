@@ -25,7 +25,7 @@ class MovieDetails extends Component {
       return (
         <>
           <div className="trailer">
-            <ReactPlayer controls={true} width='360px' height='185px' url={`https://www.${foundTrailer.site.toLowerCase()}.com/watch?v=${foundTrailer.key}`} />
+            <ReactPlayer controls={true} width='360px' height='185px' url={`https://www.${foundTrailer.site.toLowerCase()}.com/watch?v=${foundTrailer.key}`}/>
           </div>
         </>
       )
@@ -45,6 +45,7 @@ class MovieDetails extends Component {
           <button className='go-back-button'>Go Back</button>
         </Link>
           <img src={currentMovie[0].movie.backdrop_path} className='back-drop'/>
+          <div className='container'>
           <section className='details-section'>
             <div>
               <img src={currentMovie[0].movie.poster_path} className='poster'/>
@@ -59,6 +60,8 @@ class MovieDetails extends Component {
             <p className='overview'>{currentMovie[0].movie.overview}</p>
             </section>
             {this.state.trailer.length && this.getVideo()}
+          </div>
+          
         </div>
         }
         </>
