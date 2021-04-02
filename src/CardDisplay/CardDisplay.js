@@ -1,6 +1,7 @@
 import { findAllByTitle } from "@testing-library/react"
 import './CardDisplay.css'
 import Card from '../Card/Card'
+import Form from '../Form/Form'
 
 const CardDisplay = ( { movies, getMovieDetails } ) => {
   const moviesToDisplay =  movies.map(movie => {
@@ -16,10 +17,13 @@ const CardDisplay = ( { movies, getMovieDetails } ) => {
           )
         })
   return (
-    
-      <div className='card-display'>
+      <>
+        <Form/>
+        <div className='card-display'>
         {moviesToDisplay}
       </div>
+      </>
+      
   )
 }
 
