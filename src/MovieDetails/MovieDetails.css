@@ -26,8 +26,8 @@ section {
   background-color: rgb(128, 128, 128, 0.7);
   border-radius: 30px;
   padding: 2%;
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black; */
+  height: 40vh;
+  overflow: scroll;
 }
 
 .details-section {
@@ -44,7 +44,7 @@ section {
 
   .go-back-button {
      position:absolute; left:0; top:0;
-     margin-top: 10vh;
+     margin-top: 20vh;
      margin-left: 2%;
      width: 120px;
      height: 60px;
@@ -55,6 +55,8 @@ section {
     background-color: #da493c;
     font-style: bolder;
     transition: transform 1.2s;
+    font-family: "opendyslexic" !important;
+
   }
 
   .go-back-button:hover {
