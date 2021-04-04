@@ -13,6 +13,9 @@
 
 .genre {
   margin-right: 1vw;
+  background-color: #da493c;
+  padding: 1%;
+  border-radius: 3px;
 }
 section {
   display: flex;
@@ -23,7 +26,7 @@ section {
   width: 25vw;
   font-size: 1.1em;
   font-weight: bolder;
-  background-color: rgb(128, 128, 128, 0.7);
+  background-color: rgb(128, 128, 128, 0.8);
   border-radius: 30px;
   padding: 2%;
   height: 40vh;
@@ -56,6 +59,7 @@ section {
     font-style: bolder;
     transition: transform 1.2s;
     font-family: "opendyslexic" !important;
+    font-weight: bolder;
 
   }
 
@@ -65,6 +69,7 @@ section {
   }
 
   .poster {
+    width: 200px;
     border: 1px solid black;
   }
 
@@ -95,8 +100,7 @@ section {
       padding-top: 0vh;
       width: 100vw;
       display: flex;
-      /* align-items: center; */
-      /* flex-direction: column; */
+      justify-content: center;
       flex-wrap: wrap;
       border-top-right-radius: 0px;
       padding: 0%;
@@ -104,7 +108,7 @@ section {
     }
     .trailer {
       position: relative;
-      margin: 4vh 0vw 0vh 0vw; 
+      margin: 2vh 0vw 2vh 0vw; 
       align-self: center;
       
       /* position: absolute; bottom:0; right:0px;  original
@@ -124,9 +128,14 @@ section {
       font-weight: bolder;
       background-color: rgb(128, 128, 128, 0.0);
       border-radius: 0px;
-      padding: 4%
-      /* -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: black; */
+      padding: 4%;
+      border: double 4px #e74c3c;
+    }
+    .poster {
+      margin-top: 2vh;
+    }
+    .rating {
+      font-size: 1.2em;      
     }
   }
   

@@ -10,7 +10,7 @@ return (
   <Link to={`/movie/${id}`} style={{textDecoration:'none'}}>
     <div className='movie-card'>
       <h3>{title}</h3>
-      <img src={posterPath} alt='Movie Poster'/>
+      <img src={posterPath} className='home-poster'alt='Movie Poster'/>
       <p>Average Rating: {roundedRating} 🥔 's</p>
       <p>Release Date: {releaseDate}</p>
     </div>

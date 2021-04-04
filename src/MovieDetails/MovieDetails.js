@@ -45,11 +45,11 @@ class MovieDetails extends Component {
           <button className='go-back-button'>Go Back</button>
         </Link>
           <img src={currentMovie[0].movie.backdrop_path} className='back-drop'/>
-          <div className='container'>
+        <div className='container'>
           <section className='details-section'>
-            <div>
+            <div className=''>
               <img src={currentMovie[0].movie.poster_path} className='poster'/>
-              <p>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
+              <p className='rating'>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
             </div>
             <div className='info-section'>
               <h2>{currentMovie[0].movie.title}</h2>
@@ -61,7 +61,6 @@ class MovieDetails extends Component {
             </section>
             {this.state.trailer.length && this.getVideo()}
           </div>
-          
         </div>
         }
         </>
