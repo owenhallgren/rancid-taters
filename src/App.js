@@ -11,12 +11,12 @@ class App extends Component {
     super() 
     this.state = {
       movies: [],
-      currentMovie: []
+      currentMovie: [],
     }
   }
 
   componentDidMount() {
-    movieCall().then(data => this.setState({movies: data.movies}))
+    movieCall().then(data => this.setState({ movies: data.movies }))
   }
 
 
@@ -24,6 +24,8 @@ class App extends Component {
     return (
       <div className='app'>
         <Header/>
+
+        {!this.state.movies.length && <p className='loading'>Loading Will Robinson</p>}
 
         <Route exact path='/' render={() => 
           <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
