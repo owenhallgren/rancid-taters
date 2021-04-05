@@ -31,7 +31,7 @@ class Form extends Component {
                     value={this.state.search}
                     onChange={e => this.handleChange(e)}
                 />
-                <FontAwesomeIcon icon={ faSearch }/>
+                <FontAwesomeIcon icon={ faSearch } className='search-icon'/>
             </form>
         )
     }

@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   filterMovies = (input) => {
-    let filteredMovies = this.state.movies.filter(movie => movie.title.includes(input))
+    const filteredMovies = this.state.movies.filter(movie => movie.title.includes(input))
     this.setState({ filteredMovies: filteredMovies})
   }
 
@@ -33,7 +33,7 @@ class App extends Component {
          
 
         <Route exact path='/' render={() => 
-          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails} filterMovies={this.filterMovies} filteredMovies={this.state.filteredMovies}/>
         }/>
 
         <Route path='/movie/:id' render={({match}) => 
