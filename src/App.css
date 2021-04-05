@@ -1,22 +1,9 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .app {
   font-family: "opendyslexic" !important;
+  background-color: #282c34;
 }
 
 .loading {
   font-size: 1.8em;
 }
 
-@media screen and (max-width: 750px) {
-  .app {
-    background-color: #282c34;
-  }
-}
