@@ -12,12 +12,17 @@
   flex-wrap: wrap;
 }
 
+.rating {
+  font-size: 1.6em;
+}
+
 .genre {
   margin-right: 1vw;
   background-color: #da493c;
   padding: 1%;
   border-radius: 3px;
 }
+
 section {
   display: flex;
   justify-content: space-around;
