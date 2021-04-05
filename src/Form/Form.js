@@ -1,5 +1,12 @@
 import { Component } from 'react'
 import './Form.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+
+
+
+
 
 class Form extends Component {
     constructor({ filterMovies }) {
@@ -24,6 +31,7 @@ class Form extends Component {
                     value={this.state.search}
                     onChange={e => this.handleChange(e)}
                 />
+                <FontAwesomeIcon icon={ faSearch }/>
             </form>
         )
     }
