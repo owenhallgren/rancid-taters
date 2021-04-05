@@ -25,8 +25,6 @@ class App extends Component {
       <div className='app'>
         <Header/>
 
-        {!this.state.movies.length && <p className='loading'>Loading Will Robinson</p>}
-
         <Route exact path='/' render={() => 
           <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
         }/>

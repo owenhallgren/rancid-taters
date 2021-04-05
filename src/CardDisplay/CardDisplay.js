@@ -16,6 +16,7 @@ const CardDisplay = ( { movies } ) => {
 
   return (
       <div className='card-display'>
+         {!movies.length && <p className='loading'>Loading Will Robinson</p>}
         {moviesToDisplay}
       </div>
   )

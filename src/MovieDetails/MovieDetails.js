@@ -37,6 +37,10 @@ class MovieDetails extends Component {
     const { currentMovie } = this.state
     return(
       <>
+
+      {!this.state.currentMovie.length && <p className='loading'>Loading Details Will Robinson</p>}
+
+      {!this.state.currentMovie.length && <p className='loading'>Loading Trailer Will Robinson</p>}
       {
         currentMovie.length && 
       <div className='movie-details'>
