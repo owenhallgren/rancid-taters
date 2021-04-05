@@ -9,7 +9,7 @@ const Card = ({ title, posterPath, averageRating, releaseDate, id, getMovieDetai
 return (
   <Link to={`/movie/${id}`} style={{textDecoration:'none'}}>
     <div className='movie-card'>
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       <img src={posterPath} className='home-poster'alt='Movie Poster'/>
       <p>Average Rating: {roundedRating} 🥔 's</p>
       <p>Release Date: {releaseDate}</p>
