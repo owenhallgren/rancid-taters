@@ -66,7 +66,7 @@ This is a Turing School of Software and Design Module 3 project. In this project
 On page load, the user will see a grid of movies
 
 
-![](gif goes here)
+![](https://media.giphy.com/media/38exZ6t7rN7AzulOHp/giphy.gif)
 
 
 ## Search Movies
