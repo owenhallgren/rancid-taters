@@ -1,6 +1,5 @@
 import './MovieDetails.css'
 import { Component } from 'react'
-import { render } from '@testing-library/react'
 import { Link } from 'react-router-dom'
 import { getMovieDetails, getTrailer } from '../apiCalls'
 import ReactPlayer from 'react-player/youtube'
@@ -38,18 +37,22 @@ class MovieDetails extends Component {
     const { currentMovie } = this.state
     return(
       <>
+
+      {!this.state.currentMovie.length && <p className='loading'>Loading Details Will Robinson</p>}
+
+      {!this.state.currentMovie.length && <p className='loading'>Loading Trailer Will Robinson</p>}
       {
         currentMovie.length && 
       <div className='movie-details'>
         <Link to='/'>
           <button className='go-back-button'>Go Back</button>
         </Link>
-          <img src={currentMovie[0].movie.backdrop_path} className='back-drop'/>
-          <div className='container'>
+          <img src={currentMovie[0].movie.backdrop_path} className='back-drop' alt='Still shot from movie'/>
+        <div className='container'>
           <section className='details-section'>
-            <div>
-              <img src={currentMovie[0].movie.poster_path} className='poster'/>
-              <p>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
+            <div className=''>
+              <img src={currentMovie[0].movie.poster_path} className='poster' alt='Movie poster'/>
+              <p className='rating'>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
             </div>
             <div className='info-section'>
               <h2>{currentMovie[0].movie.title}</h2>
@@ -61,13 +64,11 @@ class MovieDetails extends Component {
             </section>
             {this.state.trailer.length && this.getVideo()}
           </div>
-          
         </div>
         }
         </>
       )
   }
-  
 }  
 
 export default MovieDetails
