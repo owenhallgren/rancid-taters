@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+## Intention Timer
+---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A [Front-End Project](https://github.com/owenhallgren/rancid-taters) by [Owen Hallgren](https://github.com/owenhallgren) and [Max Bregman](https://github.com/Max9545)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+1. [Overview](#overview)
+2. [Learning Goals](#learning-goals)
+3. [Technologies](#technologies)
+4. [Features](#features)
+5. [Challenges](#challenges)
+6. [Wins](#wins)
+7. [Future Additions](#future-additions)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##
+* [Deployed Site](rancid-taters.vercel.app)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation 
+* Clone this repo down, `cd` into it and run `npm i react`.
+* In the project directory run `npm install --save @fortawesome/fontawesome-free`
+* To view the site run npm start
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Overview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This is a Turing School of Software and Design Module 3 project. In this project movies are displayed on the home page. A user can search for a movie from the top of the page. A user can click on a movie to learn more about it. On the details page the user is shown the genre, the rating, the runtime, the overview, and shown a trailer. All information is being pulled from an external API. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Learning Goals
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Gain a better understanding of an app built using React
+* Understand how to use React Router
+* Utilize API calls in a clean way
+* Learn how to use state effectively in a react app
+* Implement a controlled form
+* Craft code with clean style, using small functions that show trends toward DRYness and SRP
+* Implement Cypress with sad and happy path tests
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* JSX
+* CSS
+* Javascript
+* Git
+* GitHub
+* React
+* React Router
+* Cypress
+* React Youtube Player
 
-## Learn More
+---
+## Features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
++ [Display Movies on Home Page](#display-movies-on-home-page)
++ [Search Movies](#search-movies)
++ [Display Movie Details](#display-movie-details)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Display Movies on Home Page
 
-### Analyzing the Bundle Size
+On page load, the user will see a grid of movies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+![](gif goes here)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Search Movies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+On the home page, the user can search for movies by title, the movies shown will be updated with each key click
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+![](gif goes here)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Display Movie Details
+When the user clicks on a specific movie they will be taken to a details page. On this page, they will see the runtime, rating, genres, overview, and trailer
+
+![](gif goes here)
+
+
+---
+
+
+## Challenges
+
+* Getting Router to work 
+* Using stubbing in cypress tests
+* Using an Icon
+* Getting things to look right
+
+
+---
+## Wins
+
+* Using React to build an app from the ground up
+* Implementing a controlled form
+* Implementing Cypress tests
+* Using React Router
+
+---
+## Future Additions
+
+* Add debouncing to search form to reduce api calls
+* Giving the user the ability to add movies to favorites
+* Letting the user search by genres and rating
