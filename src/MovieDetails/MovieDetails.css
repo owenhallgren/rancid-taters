@@ -36,8 +36,17 @@ section {
   border-radius: 30px;
   padding: 2%;
   height: 40vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
   overflow: scroll;
+  overflow-x: hidden;
+  
 }
+.overview::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 .details-section {
   color: black;
@@ -136,6 +145,7 @@ section {
       border-radius: 0px;
       padding: 4%;
       border: double 4px #e74c3c;
+
     }
     .poster {
       margin-top: 2vh;
