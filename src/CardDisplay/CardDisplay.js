@@ -13,8 +13,8 @@ const CardDisplay = ( { movies } ) => {
             />
           )
         })
+
   return (
-    
       <div className='card-display'>
         {moviesToDisplay}
       </div>

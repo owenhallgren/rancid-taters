@@ -30,7 +30,7 @@ class App extends Component {
         }/>
 
         <Route path='/movie/:id' render={({match}) => 
-          <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
+        <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
         }/>
       </div>
     )
