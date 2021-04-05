@@ -66,7 +66,7 @@ This is a Turing School of Software and Design Module 3 project. In this project
 On page load, the user will see a grid of movies
 
 
-![]()
+![](https://www.iloveimg.com/download/2t29djzzrcbwq425ljf8pn7pccp6hvts9t29r7b8923f9ygn4fc2xtqlry6nvht75mwnzk7r0kbd7s89zcl7b7rb5zm9yjqf8vfzplf0bvfj5w2kbnqyvsk1wzqv3qxk3Ap2jv3jq8184fm8h87zy0t3fg4sym8j13nwz2y40qlh4wvnfwmq/5)
 
 
 ## Search Movies
