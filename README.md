@@ -13,7 +13,7 @@ A [Front-End Project](https://github.com/owenhallgren/rancid-taters) by [Owen Ha
 6. [Wins](#wins)
 7. [Future Additions](#future-additions)
 
-##
+## Deplyed Site
 * [Deployed Site](rancid-taters.vercel.app)
 
 ## Installation 
