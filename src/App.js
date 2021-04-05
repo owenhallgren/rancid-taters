@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       movies: [],
       currentMovie: [],
+      filteredMovies: []
     }
   }
 
@@ -19,14 +20,20 @@ class App extends Component {
     movieCall().then(data => this.setState({ movies: data.movies }))
   }
 
+  filterMovies = (input) => {
+    const filteredMovies = this.state.movies.filter(movie => movie.title.includes(input))
+    this.setState({ filteredMovies: filteredMovies})
+  }
+
 
   render() {
     return (
       <div className='app'>
         <Header/>
+         
 
         <Route exact path='/' render={() => 
-          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails} filterMovies={this.filterMovies} filteredMovies={this.state.filteredMovies}/>
         }/>
 
         <Route path='/movie/:id' render={({match}) => 
