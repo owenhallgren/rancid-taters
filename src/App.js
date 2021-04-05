@@ -3,11 +3,7 @@ import { Component } from 'react'
 import CardDisplay from './CardDisplay/CardDisplay'
 import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
-import {
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { Route } from "react-router-dom";
 import { movieCall } from './apiCalls';
 
 class App extends Component {
@@ -28,13 +24,13 @@ class App extends Component {
     return (
       <div className='app'>
         <Header/>
-        
+
         <Route exact path='/' render={() => 
-        <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+          <CardDisplay movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
         }/>
 
         <Route path='/movie/:id' render={({match}) => 
-        <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
+          <MovieDetails id={ match.params.id } goBackToHome={this.goBackToHome} />
         }/>
       </div>
     )

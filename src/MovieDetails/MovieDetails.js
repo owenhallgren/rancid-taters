@@ -1,6 +1,5 @@
 import './MovieDetails.css'
 import { Component } from 'react'
-import { render } from '@testing-library/react'
 import { Link } from 'react-router-dom'
 import { getMovieDetails, getTrailer } from '../apiCalls'
 import ReactPlayer from 'react-player/youtube'
