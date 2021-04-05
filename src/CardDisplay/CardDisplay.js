@@ -1,8 +1,7 @@
-import { findAllByTitle } from "@testing-library/react"
 import './CardDisplay.css'
 import Card from '../Card/Card'
 
-const CardDisplay = ( { movies, getMovieDetails } ) => {
+const CardDisplay = ( { movies } ) => {
   const moviesToDisplay =  movies.map(movie => {
           return (
             <Card
@@ -11,13 +10,13 @@ const CardDisplay = ( { movies, getMovieDetails } ) => {
               averageRating={movie.average_rating}
               releaseDate={movie.release_date}
               id={movie.id}
-              getMovieDetails={getMovieDetails}
             />
           )
         })
+
   return (
-    
       <div className='card-display'>
+         {!movies.length && <p className='loading'>Loading Will Robinson</p>}
         {moviesToDisplay}
       </div>
   )

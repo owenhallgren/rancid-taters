@@ -9,11 +9,20 @@
 }
 .genreDisplay {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.rating {
+  font-size: 1.6em;
 }
 
 .genre {
   margin-right: 1vw;
+  background-color: #da493c;
+  padding: 1%;
+  border-radius: 3px;
 }
+
 section {
   display: flex;
   justify-content: space-around;
@@ -23,12 +32,21 @@ section {
   width: 25vw;
   font-size: 1.1em;
   font-weight: bolder;
-  background-color: rgb(128, 128, 128, 0.7);
+  background-color: rgb(128, 128, 128, 0.8);
   border-radius: 30px;
   padding: 2%;
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black; */
+  height: 40vh;
+  -ms-overflow-style: none;
+  scrollbar-width: none; 
+  overflow: scroll;
+  overflow-x: hidden;
+  
 }
+.overview::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 .details-section {
   color: black;
@@ -44,17 +62,20 @@ section {
 
   .go-back-button {
      position:absolute; left:0; top:0;
-     margin-top: 10vh;
+     margin-top: 20vh;
      margin-left: 2%;
      width: 120px;
      height: 60px;
      font-size: large;
      border-radius: 3px;
-    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    /* -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out; */
     background-color: #da493c;
     font-style: bolder;
     transition: transform 1.2s;
+    font-family: "opendyslexic" !important;
+    font-weight: bolder;
+
   }
 
   .go-back-button:hover {
@@ -63,6 +84,7 @@ section {
   }
 
   .poster {
+    width: 200px;
     border: 1px solid black;
   }
 
@@ -72,8 +94,8 @@ section {
     height: auto;
     margin-right: 6vw;
     margin-bottom: 10vw;
-    /* align-self: center; */
   }
+  
 .info-section {
     padding: 2%
   }
@@ -93,8 +115,7 @@ section {
       padding-top: 0vh;
       width: 100vw;
       display: flex;
-      /* align-items: center; */
-      /* flex-direction: column; */
+      justify-content: center;
       flex-wrap: wrap;
       border-top-right-radius: 0px;
       padding: 0%;
@@ -102,7 +123,7 @@ section {
     }
     .trailer {
       position: relative;
-      margin: 4vh 0vw 0vh 0vw; 
+      margin: 2vh 0vw 2vh 0vw; 
       align-self: center;
       
       /* position: absolute; bottom:0; right:0px;  original
@@ -122,9 +143,15 @@ section {
       font-weight: bolder;
       background-color: rgb(128, 128, 128, 0.0);
       border-radius: 0px;
-      padding: 4%
-      /* -webkit-text-stroke-width: 1px;
-      -webkit-text-stroke-color: black; */
+      padding: 4%;
+      border: double 4px #e74c3c;
+
+    }
+    .poster {
+      margin-top: 2vh;
+    }
+    .rating {
+      font-size: 1.2em;      
     }
   }
   
