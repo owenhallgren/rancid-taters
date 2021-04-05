@@ -44,11 +44,11 @@ class MovieDetails extends Component {
         <Link to='/'>
           <button className='go-back-button'>Go Back</button>
         </Link>
-          <img src={currentMovie[0].movie.backdrop_path} className='back-drop'/>
+          <img src={currentMovie[0].movie.backdrop_path} className='back-drop' alt='Still shot from movie'/>
         <div className='container'>
           <section className='details-section'>
             <div className=''>
-              <img src={currentMovie[0].movie.poster_path} className='poster'/>
+              <img src={currentMovie[0].movie.poster_path} className='poster' alt='Movie poster'/>
               <p className='rating'>{Math.round(currentMovie[0].movie.average_rating * 10)/10} 🥔 's</p>
             </div>
             <div className='info-section'>

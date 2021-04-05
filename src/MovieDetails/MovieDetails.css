@@ -9,6 +9,7 @@
 }
 .genreDisplay {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .genre {
@@ -53,8 +54,8 @@ section {
      height: 60px;
      font-size: large;
      border-radius: 3px;
-    -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    /* -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out; */
     background-color: #da493c;
     font-style: bolder;
     transition: transform 1.2s;
