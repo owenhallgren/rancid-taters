@@ -1,4 +1,4 @@
-## Intention Timer
+## Rancid Taters
 ---
 
 A [Front-End Project](https://github.com/owenhallgren/rancid-taters) by [Owen Hallgren](https://github.com/owenhallgren) and [Max Bregman](https://github.com/Max9545)
