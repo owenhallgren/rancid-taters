@@ -67,6 +67,7 @@ On page load, the user will see a grid of movies
 
 
 ![](https://imgur.com/zQjvXNt)
+<img width="1440" alt="search" src="https://imgur.com/zQjvXNt">
 
 
 ## Search Movies
