@@ -65,10 +65,10 @@ This is a Turing School of Software and Design Module 3 project. In this project
 
 On page load, the user will see a grid of movies
 
+<img width="1440" alt="details" src="https://files.slack.com/files-pri/T029P2S9M-F01TC4CE94K/tater_shot_homepage.jpg
+">
 
 ![](https://imgur.com/zQjvXNt)
-<img width="1440" alt="search" src="https://imgur.com/zQjvXNt">
-
 
 ## Search Movies
 
