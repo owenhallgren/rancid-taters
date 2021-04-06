@@ -14,7 +14,7 @@ A [Front-End Project](https://github.com/owenhallgren/rancid-taters) by [Owen Ha
 7. [Future Additions](#future-additions)
 
 ## Deplyed Site
-* [Deployed Site](rancid-taters.vercel.app)
+* [Deployed Site](https//:rancid-taters.vercel.app)
 
 ## Installation 
 * Clone this repo down, `cd` into it and run `npm i react`.
