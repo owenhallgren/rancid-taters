@@ -5,6 +5,7 @@ import Header from './Header/Header'
 import MovieDetails from './MovieDetails/MovieDetails'
 import { Route } from "react-router-dom";
 import { movieCall } from './apiCalls';
+var worldMapData = require('city-state-country');
 
 class App extends Component {
   constructor() {
@@ -17,14 +18,17 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const citiesList = worldMapData.searchCity('Paris');
+    console.log(citiesList)
     movieCall().then(data => this.setState({ movies: data.movies }))
   }
 
   filterMovies = (input) => {
-    const filteredMovies = this.state.movies.filter(movie => movie.title.includes(input))
+    const filteredMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input))
     this.setState({ filteredMovies: filteredMovies})
   }
 
+  
 
   render() {
     return (
